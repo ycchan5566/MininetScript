@@ -1,4 +1,3 @@
-# 2-by-2 leaf-spine topology
 import os
 import sys
 
@@ -22,8 +21,8 @@ class MyTopo(Topo):
         for i in range(1, 3):
             self.switch.append(self.addSwitch("100"+str(i), dpid="000000000000000"+str(i)))
 
-        self.host.append(self.addHost("h1", cls=IpHost, mac="00:00:00:00:00:01", ip="10.6.1.1/24", gateway="10.6.1.254"))
-        self.host.append(self.addHost("h2", cls=IpHost, mac="00:00:00:00:00:02", ip="10.6.1.2/24", gateway="10.6.1.254"))
+        self.host.append(self.addHost("h1", cls=IpHost, mac="00:00:00:00:00:01", ip="10.0.0.1/24", gateway="10.0.0.254"))
+        self.host.append(self.addHost("h2", cls=IpHost, mac="00:00:00:00:00:02", ip="10.0.0.2/24", gateway="10.0.0.254"))
 
         # add links
 	for i in range(2):
